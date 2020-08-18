@@ -72,10 +72,12 @@ app.delete("/repositories/:id", (request, response) => {
   const repositoryIndex = repositories.findIndex(repository => 
     repository.id === id);
   if(repositoryIndex < 0) {
-    return response.status(400).send();
+    return response.status(400).json({
+      error: 'Repositorie not found.'
+    });
   }
   repositories.splice(repositoryIndex, 1);
-  return response.status(204).send({});
+  return response.status(204).send();
 });
 
 app.post("/repositories/:id/like", (request, response) => {
