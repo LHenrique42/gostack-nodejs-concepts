@@ -20,6 +20,20 @@
 
 This is an application to storage repositories of GitHub portfolio, that allow list, update, and delete repositories, and besides that, the repositories can also receive likes.
 
+### Execute and test
+
+To run and test you need [node](https://nodejs.org/en/) and [yarn](https://yarnpkg.com/) installed.
+
+#### Run
+```
+yarn dev
+```
+
+#### Test
+```
+yarn test
+```
+
 ### Application Routes
 
 - **`POST /repositories`**: The route must receive `title`, `URL`, and `techs` inside of the request body. The URL must be the link to the Github of that repository. When registering a new project, it must be stored inside an object in the following format: `{id:" uuid ", title: 'Desafio Node.js', URL: 'http: //github.com / ...' , techs: ["Node.js", "..."], likes: 0} `; Make sure the ID is a UUID, and always start likes as 0.
